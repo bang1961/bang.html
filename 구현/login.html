@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>로그인</title>
+    <link rel="stylesheet" href="login.css">
+  </head>
+<body>
+  <main class="container">
+    <div class="logo_header" onclick="location.href = '#';">
+      <img src="https://tadatada.com/static/images/btn_home_logo@4x.png" alt="타다로고">
+    </div>
+    <section class="login_box">
+      <input type="text" placeholder="ID" class="input_box" id="userID" onkeyup="isBtnAble();">
+      <input type="password" placeholder="PASSWORD" class="input_box" id="userPW" onkeyup="isBtnAble();">
+      <button type="button" onclick = "login();" id="login_btn" class = "login_btn" disabled>로그인</button>
+    </section>
+    <div class="footer">
+      <span class="get_info" onclick = "joinUser();">회원가입</span>
+      <span class="divide_article">|</span>
+      <span class="get_info" onclick = "findPW();">비밀번호찾기</span>
+    </div>
+
+  </main>
+  <script>
+    function isBtnAble(){
+      var lenID = document.getElementById("userID").value.length;
+      var lenPW = document.getElementById("userPW").value.length;
+      if (lenID > 0 & lenPW > 0) {
+        document.getElementById("login_btn").disabled = false;
+      }
+      else{
+        document.getElementById("login_btn").disabled = true;
+      }
+    }
+
+    function login(){
+      var userID = document.getElementById("userID").value;
+      var userPW = document.getElementById("userPW").value;
+      console.log(userID, userPW);
+      alert("아이디 : " + userID + "\n비밀번호 : " + userPW);
+    }
+
+
+
+    function joinUser(){
+      alert("준비중입니다.");
+    }
+    function findPW(){
+      alert("준비중입니다.");
+    }
+
+  </script>
+
+</body>
+</html>
